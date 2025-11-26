@@ -1,0 +1,2 @@
+# Execute this command to run redis container
+#docker run -d --network roboshop --name redis redis:7
