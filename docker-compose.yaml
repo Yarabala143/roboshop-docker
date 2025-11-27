@@ -16,7 +16,6 @@ services:
       - mongodb:/data/db
   
   redis:
-    build: ./redis
     image: redis:7.0
     container_name: redis
     volumes:
@@ -30,7 +29,6 @@ services:
     - mysql:/var/lib/mysql
 
   rabbitmq:
-    build: ./rabbitmq
     image: rabbitmq:3
     container_name: rabbitmq
     environment:
