@@ -13,6 +13,10 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
 EXPOSE 8080
 USER roboshop
 COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
+EXPOSE 8080
+LABEL com.project="roboshop" \
+      com.component="catalogue" \
+      com.createdsby="SatishY" 
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 CMD ["server.js"]
