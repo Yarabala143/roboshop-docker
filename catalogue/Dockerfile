@@ -1,5 +1,4 @@
 FROM node:20.19.5-alpine3.22
-EXPOSE 8080
 WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
@@ -8,9 +7,7 @@ ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 CMD ["node", "server.js"]
 
-
 # FROM node:20
-# EXPOSE 8080
 # WORKDIR /opt/server
 # COPY package.json .
 # COPY *.js .
