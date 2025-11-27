@@ -1,15 +1,14 @@
 services:
+  catalogue:
+    image: catalogue:v1
+    container_name: catalogue
+    depends_on:
+      - mongodb
+
   mongodb:
     image: mongodb:v1
     container_name: mongodb
-    # restart: always
-    # environment:
-    #   - MONGO_INITDB_ROOT_USERNAME=admin
-    #   - MONGO_INITDB_ROOT_PASSWORD=admin123
-    # ports:
-    #   - "27017:27017"
-    # volumes:
-    #   - mongo-data:/data/db
+   
 networks:
   default:
     driver: bridge
